@@ -1,0 +1,15 @@
+/* Comentario en css */
+body {
+    background-color: skyblue;
+}
+#yo {
+    background-color: purple;
+}
+menu{
+    background-color: grey;
+    font-family: 'Courier New', Courier, monospace;
+}
+.menu:hover {
+
+    background-color: darkgrey; 
+}
