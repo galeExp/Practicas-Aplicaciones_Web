@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="es_MX">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Incorrecto: <link rel="css" href="styles.css"> -->
+    <link rel="stylesheet" href="Practica03/css/styles.css">
 
     <title>Gael Uriel López García @ T.S.U en Desarrollo de Software Multiplataforma </title>
     <link id="mi-favicon" rel="icon" href="assets/manager.png" type="User.png">
+    
 </head>
 <body>
 
@@ -13,19 +16,36 @@
     <!--NAVEGACIÓN -->
     <!--================== -->
 
-    <nav id="menu"> <!--Etiqueta de semantica con el atributo id-->
-        <ul><!--Unordered List, Lista Desordenada-->
-            <li>Inicio</li>
-            <li>Acerca de Mí</li>
-            <li>Aspiraciones</li>
-            <li>Hobbies</li>
-            <li>Favoritos</li>
-            <li>Redes Sociales</li>
-
+   <nav id="inicio"> <!-- Etiqueta de semantica con el atributo id-->
+        <ul> <!-- Unordered List, Lista desordenada-->
+            <li class="menu_option"> <a href="#inicio">Inicio </a></li>
+            <li class="menu_option"> <a href="#acercaDeMi">Acerca de mí </a></li>
+            <li class="menu_option"> <a href="#aspiraciones">Aspiraciones </a></li>
+            <li class="menu_option"> <a href="#hobbies">Inicio </a></li>
+            <li class="menu_option"> <a href="#favoritos">Favoritos </a></li>
+            <li class="menu_option"> <a href="#redes">Redes Sociales </a></li>
 
         </ul>
-
     </nav>
+
+    <!--================================================-->=
+    <!--HERO PARALLAX-->
+    <!--==================================-->
+
+    <header id="Inicio"
+        class="parallax parallax-1">
+           <div class="glass hero.card">
+             <img src="Practica03/assets/manager.png"
+             alt="Fotografía de perfil "
+             class="perfil">
+             <h1>Hola,soy Gael U. López García 
+             </h1>
+             <p>Estudiante|Aficonado de la Tecnologia|Explorador</p>
+             <blockquote>"Que seria de la pizza sin el peperoni "</blockquote>
+           </div>
+
+    </header>
+    
     <!--ACERCA DE MI-->
     <section id="yo">
         <h2>🐧Acerca de Mí</h2>
