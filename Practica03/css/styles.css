@@ -97,3 +97,77 @@ nav a:hover{
 
 
 }
+/*=========================*/
+.parallax-1 {
+    background-image: url("../assets/1126157.png");
+}
+.parallax-2 {
+    background-image: url("../assets/705836.png");
+}
+.parallax-3 {
+    background-image: url("../assets/1075300.jpg");
+
+}
+.parallax-4 {
+    background-image: url("../assets/688115.png");
+}
+
+
+.profile-img{
+    width:clamp(140px,20vmin,300px);
+    height:clamp(140px,20vmin,300px);
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    box-shadow: 0 10px 30px rgba(66, 18, 121, 0.38);
+
+
+
+}
+
+.glass{
+    display:flex;
+    background: rgba(120, 69, 223, 0.212);
+    color: white;
+    backdrop-filter:blur(14px);
+    border: 1px solid
+    rgba(82, 70, 70, 0.63);
+    border-radius: 24px;
+    box-shadow: rgba(63, 58, 58, 0.63);
+}
+/*=============================HERO CARD======================================*/
+
+.hero-card{
+    max-width: 700px;
+    padding:45px;
+    text-align:center;
+}
+
+blockquote{
+    max-width:500px;
+    font-size: 1.3rem;
+    font-style: italic ;
+}
+.boton {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 14px 30px;
+    background: rgba(163, 161, 161, 0.904);
+    color:#111827;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 3s;
+}
+
+.boton:hover{
+    transform:
+    traslateY(-4px);
+
+    box-shadow:
+    
+        90 12px 25px 
+    rgba(0,0,0, 0.38);
+    background-color: aquamarine;
+    color:aliceblue;
+}
