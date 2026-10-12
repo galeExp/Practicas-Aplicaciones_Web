@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Incorrecto: <link rel="css" href="styles.css"> -->
     <link rel="stylesheet" href="Practica03/css/styles.css">
+    <script src="js/app.js"></script>
 
     <title>Gael Uriel López García @ T.S.U en Desarrollo de Software Multiplataforma </title>
     <link id="mi-favicon" rel="icon" href="assets/manager.png" type="User.png">
@@ -156,26 +157,54 @@
     <!--Favoritos-->
     <!--=================================-->
     <section id="favoritos" class="seccion solido-4">
-        <h2>❤️Favoritos </h2>
-        <div class="tres">
-            <article class="card-4">
-                <h3>🎵 Cancion Favorita</h3>
-                <p>Mi canción favorita es "Enemigo-Noches de Salon"</p>
-                <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/7e3wTgibtSm4iFe3bQ4y2C?utm_source=generator&si=97f61bda443243ec" width="510" height="265" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            </article>
-            <article class="card-4">
-                <h3>🎬 Película Favorita</h3>
-                <p>Mi película favorita es "John Wick"</p>
-                <iframe width="510" height="265" src="https://www.youtube.com/embed/r1u1zWsY4DU?si=CZtU_x4LGp7W6P_D" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </article>
-            <article class="card-4">
-                <h3>📚 Libro Favorito</h3>
-                <p>Mi libro favorito es "el coronel no tiene quien le escriba"</p>
-                <iframe src="/Practica03/assets/Gabriel García Márquez - EL Coronel No Tiene Quien Le Escriba (1961).pdf" width="510" height="265"></iframe>
+    <h2>❤️ Favoritos</h2>
 
-            </article>
+    <!-- Wrapper principal del carrusel -->
+    <div class="carrusel-wrapper">
+        <!-- Botón Anterior -->
+        <button class="carrusel-btn btn-prev" id="btn-prev">❮</button>
+
+        <!-- Ventana visible -->
+        <div class="carrusel-contenedor">
+            <div class="carrusel-track" id="carrusel-track">
+
+                <!-- Diapositiva 1: Canción -->
+                <article class="card-4 carrusel-item">
+                    <h3>🎵 Canción Favorita</h3>
+                    <p>Mi canción favorita es "Enemigo - Noches de Salon"</p>
+                    <div class="media-placeholder" data-src="https://open.spotify.com/embed/track/7e3wTgibtSm4iFe3bQ4y2C?utm_source=generator&si=97f61bda443243ec" data-type="iframe">
+                        <button class="btn-cargar">▶ Cargar Canción</button>
+                    </div>
+                </article>
+
+                <!-- Diapositiva 2: Película -->
+                <article class="card-4 carrusel-item">
+                    <h3>🎬 Película Favorita</h3>
+                    <p>Mi película favorita es "John Wick"</p>
+                    <div class="media-placeholder" data-src="https://www.youtube.com/embed/r1u1zWsY4DU?autoplay=1" data-type="iframe">
+                        <button class="btn-cargar">▶ Ver Tráiler</button>
+                    </div>
+                </article>
+
+                <!-- Diapositiva 3: Libro -->
+                <article class="card-4 carrusel-item">
+                    <h3>📚 Libro Favorito</h3>
+                    <p>Mi libro favorito es "El coronel no tiene quien le escriba"</p>
+                    <div class="media-placeholder">
+                        <button class="btn-cargar btn-pdf" data-pdf="/Practica03/assets/Gabriel García Márquez - EL Coronel No Tiene Quien Le Escriba (1961).pdf">📖 Leer Libro</button>
+                    </div>
+                </article>
+
+            </div>
         </div>
-    </section>
+
+        <!-- Botón Siguiente -->
+        <button class="carrusel-btn btn-next" id="btn-next">❯</button>
+    </div>
+
+    <!-- Indicadores (puntos de abajo) -->
+    <div class="carrusel-puntos" id="carrusel-puntos"></div>
+</section>
     <!-- ============================= -->
     <!-- REDES SOCIALES -->
     <!-- ============================= -->
