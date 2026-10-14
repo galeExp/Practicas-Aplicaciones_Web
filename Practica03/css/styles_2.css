@@ -128,8 +128,8 @@ nav a:hover{
 
 .glass{
     display:flex;
-    background: rgba(141, 92, 240, 0.041);
-    color: rgb(158, 152, 152);
+    background: rgba(141, 92, 240, 0.199);
+    color: rgb(248, 244, 244);
     backdrop-filter:blur(14px);
     border: 1px solid
     rgba(82, 70, 70, 0);
@@ -169,7 +169,7 @@ blockquote{
     
         90 12px 25px 
     rgba(0,0,0, 0.38);
-    background-color: aquamarine;
+    background-color: rgb(94, 81, 156);
     color:aliceblue;
 }
 /*======================== COLORES SOLIDOS ALTERNOS=================================== 
@@ -185,9 +185,14 @@ blockquote{
     background:rgba(165, 42, 42, 0.705);
 }
 .solido-4{
-    background: #52688b;
+    background: #52688bf5;
+    color:#cccccc;
+}
+.solido-5{
+    background: #2a2a2b25;
     color:#ccc;
 }
+
 section{
     min-height:40vh;
     padding:80px 8%;
@@ -309,7 +314,7 @@ section h2{
     min-width: 120px;
     padding: 18px;
     color: #ffffff;
-    background: linear-gradient(145deg, #1e293b, #334155);
+    background: linear-gradient(145deg, #690d55, #4d5661);
     border-radius: 18px;
     text-decoration: none;
     box-shadow: 0 12px 25px rgba(0,0,0, 0.2);
@@ -318,7 +323,7 @@ section h2{
 
 .redes-sociales a:hover {
     transform: translateY(-8px) scale(1.05);
-    background: linear-gradient(145deg, #2563eb, #7c3aed); /* Corrección de "#" */
+    background: linear-gradient(145deg, #7d17d198, #6e6e68); /* Corrección de "#" */
 }
 
 .redes-sociales svg {
@@ -452,3 +457,131 @@ section h2{
     background-color: #26af5f;
     transform: scale(1.05);
 }
+/* ===== MINIATURAS DEL CARRUSEL ===== */
+.carrusel-item { text-align: center; }
+.miniatura {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 210px;
+    margin: 18px 0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #6d28d9, #1e1b4b);
+}
+/* Si la imagen no existe, se queda visible este emoji de respaldo */
+.miniatura::before { content: attr(data-emoji); font-size: 5rem; }
+.miniatura img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.mini-pelicula { background: linear-gradient(135deg, #9a3412, #431407); }
+.mini-libro    { background: linear-gradient(135deg, #166534, #052e16); }
+
+/* ===== DISEÑO DEL CARRUSEL (tarjetas grandes) ===== */
+.favoritos-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: -20px auto 35px;
+    font-size: 1.1rem;
+    color: #c4b5fd;
+}
+.carrusel-wrapper { max-width: 1100px; padding: 0 70px; }
+.carrusel-contenedor { border-radius: 28px; }
+
+.tarjeta-fav {
+    cursor: pointer;
+    padding: 45px 30px 40px;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(135deg, #2b1055 0%, #6b46b8 50%, #9d8fe0 100%);
+}
+.tarjeta-fav .miniatura {
+    width: min(100%, 420px);
+    height: clamp(220px, 45vh, 420px);
+    margin: 0 auto 25px;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+    transition: transform 0.3s;
+}
+.tarjeta-fav:hover .miniatura { transform: scale(1.03); }
+.tarjeta-fav:focus-visible { outline: 3px solid #fff; outline-offset: -8px; }
+.tarjeta-fav h3 { margin: 0 0 6px; font-size: 1.6rem; }
+.tarjeta-fav p { margin: 0; font-size: 1.05rem; opacity: 0.9; }
+
+/* Flechas circulares y puntos */
+.carrusel-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    padding: 0;
+    background: #5b4bc4;
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+.carrusel-btn:hover { background: #7466e0; }
+.btn-prev { left: 0; }
+.btn-next { right: 0; }
+.punto.activo { background-color: #fff; }
+
+@media (max-width: 700px) {
+    .carrusel-wrapper { padding: 0 6px; }
+    .carrusel-btn { width: 42px; height: 42px; }
+    .tarjeta-fav { padding: 35px 20px 30px; }
+}
+
+/* ===== MODALES INDIVIDUALES ===== */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;          /* encima del nav (1000) */
+    padding: 30px 20px;
+}
+.modal.abierto { display: flex; }
+
+.modal-contenido {
+    width: 100%;
+    max-width: 700px;
+    max-height: 92vh;
+    overflow: auto;
+    background: #16224e;
+    color: #fff;
+    padding: 24px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+.modal-contenido.ancho { max-width: 900px; }
+.modal-contenido h3 { margin: 0 0 16px; }
+
+.modal-cerrar {
+    display: block;
+    margin: 0 0 12px auto;
+    background: #ff4757;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.volver-inicio {
+    text-align: center;
+    margin-top: 40px;
+}
+.modal-contenido video { width: 100%; max-height: 60vh; border-radius: 10px; background: #000; }
+.modal-contenido audio { width: 100%; margin: 10px 0; }
+.modal-contenido embed { width: 100%; height: 70vh; border-radius: 8px; background: #fff; }
+
+body.modal-abierto { overflow: hidden; }

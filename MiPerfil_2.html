@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Incorrecto: <link rel="css" href="styles.css"> -->
-    <link rel="stylesheet" href="Practica03/css/styles.css">
-    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="Practica03/css/styles_2.css">
+    <script src="js/app_2.js"></script>
 
     <title>Gael Uriel López García @ T.S.U en Desarrollo de Software Multiplataforma </title>
     <link id="mi-favicon" rel="icon" href="assets/manager.png" type="User.png">
@@ -17,7 +17,7 @@
     <!--NAVEGACIÓN -->
     <!--================== -->
 
-   <nav id="inicio"> <!-- Etiqueta de semantica con el atributo id-->
+   <nav> <!-- Etiqueta de semantica -->
         <ul> <!-- Unordered List, Lista desordenada-->
             <li class="menu_option"> <a href="#inicio">Inicio </a></li>
             <li class="menu_option"> <a href="#yo">Acerca de mí </a></li>
@@ -29,11 +29,11 @@
         </ul>
     </nav>
 
-    <!--================================================-->=
+    <!--================================================-->
     <!--HERO PARALLAX-->
     <!--==================================-->
 
-    <header id="Inicio"
+    <header id="inicio"
         class="parallax parallax-1">
            <div class="glass hero-card">
              <img src="Practica03/assets/10.png"
@@ -159,57 +159,90 @@
     <section id="favoritos" class="seccion solido-4">
     <h2>❤️ Favoritos</h2>
 
-    <!-- Wrapper principal del carrusel -->
-    <div class="carrusel-wrapper">
-        <!-- Botón Anterior -->
-        <button class="carrusel-btn btn-prev" id="btn-prev">❮</button>
+    <p class="favoritos-intro">Descubre lo que gusta , da click en una tarjeta para explorar su contenido.</p>
 
-        <!-- Ventana visible -->
+    <!-- CARRUSEL: al pulsar una tarjeta se abre su modal -->
+    <div class="carrusel-wrapper">
+        <button class="carrusel-btn btn-prev" id="btn-prev" aria-label="Anterior">❮</button>
+
         <div class="carrusel-contenedor">
             <div class="carrusel-track" id="carrusel-track">
 
-                <!-- Diapositiva 1: Canción -->
-                <article class="card-4 carrusel-item">
-                    <h3>🎵 Canción Favorita</h3>
-                    <p>Mi canción favorita es "Enemigo - Noches de Salon"</p>
-                    <div class="media-placeholder" data-src="https://open.spotify.com/embed/track/7e3wTgibtSm4iFe3bQ4y2C?utm_source=generator&si=97f61bda443243ec" data-type="iframe">
-                        <button class="btn-cargar">▶ Cargar Canción</button>
+                <!-- Tarjeta 1: Canción -->
+                <article class="carrusel-item tarjeta-fav btn-modal" data-modal="modal-cancion" role="button" tabindex="0">
+                    <div class="miniatura mini-cancion" data-emoji="🎵">
+                        <img src="Practica03/assets/cancion.jpg" alt="Miniatura de la canción" onerror="this.remove()">
                     </div>
+                    <h3>🎵 Enemigo - Noches de Salon</h3>
+                    <p>Escuchar canción</p>
                 </article>
 
-                <!-- Diapositiva 2: Película -->
-                <article class="card-4 carrusel-item">
-                    <h3>🎬 Película Favorita</h3>
-                    <p>Mi película favorita es "John Wick"</p>
-                    <div class="media-placeholder" data-src="https://www.youtube.com/embed/r1u1zWsY4DU?autoplay=1" data-type="iframe">
-                        <button class="btn-cargar">▶ Ver Tráiler</button>
+                <!-- Tarjeta 2: Película -->
+                <article class="carrusel-item tarjeta-fav btn-modal" data-modal="modal-pelicula" role="button" tabindex="0">
+                    <div class="miniatura mini-pelicula" data-emoji="🎬">
+                        <img src="Practica03/assets/pelicula.jpg" alt="Miniatura de la película" onerror="this.remove()">
                     </div>
+                    <h3>🎬 John Wick</h3>
+                    <p>Ver película</p>
                 </article>
 
-                <!-- Diapositiva 3: Libro -->
-                <article class="card-4 carrusel-item">
-                    <h3>📚 Libro Favorito</h3>
-                    <p>Mi libro favorito es "El coronel no tiene quien le escriba"</p>
-                    <div class="media-placeholder">
-                        <button class="btn-cargar btn-pdf" data-pdf="/Practica03/assets/Gabriel García Márquez - EL Coronel No Tiene Quien Le Escriba (1961).pdf">📖 Leer Libro</button>
+                <!-- Tarjeta 3: Libro -->
+                <article class="carrusel-item tarjeta-fav btn-modal" data-modal="modal-libro" role="button" tabindex="0">
+                    <div class="miniatura mini-libro" data-emoji="📚">
+                        <img src="Practica03/assets/libro.jpg" alt="Portada del libro" onerror="this.remove()">
                     </div>
+                    <h3>📚 El coronel no tiene quien le escriba</h3>
+                    <p>Leer capítulo PDF</p>
                 </article>
 
             </div>
         </div>
 
-        <!-- Botón Siguiente -->
-        <button class="carrusel-btn btn-next" id="btn-next">❯</button>
+        <button class="carrusel-btn btn-next" id="btn-next" aria-label="Siguiente">❯</button>
     </div>
 
-    <!-- Indicadores (puntos de abajo) -->
     <div class="carrusel-puntos" id="carrusel-puntos"></div>
+
+    <!-- ===== MODALES INDIVIDUALES ===== -->
+
+    <!-- Modal 1: Canción (AUDIO) -->
+    <div class="modal" id="modal-cancion" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-contenido">
+            <button class="modal-cerrar">✕ Cerrar</button>
+            <h3>🎵 Enemigo - Noches de Salon</h3>
+            <audio controls preload="metadata">
+                <source src="Practica03/assets/cancion.mp3" type="audio/mpeg">
+                Tu navegador no soporta la etiqueta audio.
+            </audio>
+        </div>
+    </div>
+
+    <!-- Modal 2: Película (VIDEO) -->
+    <div class="modal" id="modal-pelicula" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-contenido">
+            <button class="modal-cerrar">✕ Cerrar</button>
+            <h3>🎬 John Wick</h3>
+            <video controls preload="metadata" playsinline>
+                <source src="Practica03/assets/pelicula.mp4" type="video/mp4">
+                Tu navegador no soporta la etiqueta video.
+            </video>
+        </div>
+    </div>
+
+    <!-- Modal 3: Libro (PDF) -->
+    <div class="modal" id="modal-libro" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-contenido ancho">
+            <button class="modal-cerrar">✕ Cerrar lectura</button>
+            <h3>📚 El coronel no tiene quien le escriba</h3>
+            <embed type="application/pdf" data-src="Practica03/assets/Gabriel García Márquez - EL Coronel No Tiene Quien Le Escriba (1961).pdf">
+        </div>
+    </div>
 </section>
     <!-- ============================= -->
     <!-- REDES SOCIALES -->
     <!-- ============================= -->
 
-    <section id="redes"
+    <section id="redes"  class="seccion solido-5"
              >
 
         <h2>👾Mis redes sociales</h2>
@@ -246,10 +279,11 @@
                 <path fill="white" d="M21 7.5c-.2-1.4-1.2-2.5-2.6-2.7C16.4 4.5 12 4.5 12 4.5s-4.4 0-6.4.3C4.2 5 3.2 6.1 3 7.5 2.7 9 2.7 12 2.7 12s0 3 .3 4.5c.2 1.4 1.2 2.5 2.6 2.7 2 .3 6.4.3 6.4.3s4.4 0 6.4-.3c1.4-.2 2.4-1.3 2.6-2.7.3-1.5.3-4.5.3-4.5s0-3-.3-4.5z"/>  
                 <polygon points="10,9 16,12 10,15" fill="black"/> </svg>
                 <span>YouTube</span>
-                
             </a>
-
-          
+        </div>
+        <div class="volver-inicio">
+            <a href="#inicio" class="boton">⬆ Volver al inicio</a>
+        </div>
 
     </section>
     
