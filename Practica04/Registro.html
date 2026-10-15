@@ -3,9 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MecaGest:Formulario de Registro de Nuevos Usuarios</title>
+    <title>MecaGest:Formulario de Registro de Nuevos Usuarios - 250954</title>
 </head>
 <body>
+    <header>
+        <h1>MecaGest</h1>
+        <h2>Registro de Nuevos Usuarios</h2>
+        <p>Complete los campos para solicitar una cuenta en el sistema</p>
+
+    </header>
+    <main><!--Action:accción-->
+        <!--Post:Intgresar datos-->
+        <!--GetPosr:Jalar informacion Precargada/Tag semantico (no se ven/no renderizan )-->
+        <form action="" method="Post">
+            <!--Tag para ingresar-->
+            <fieldset>
+                <legend>Datos Personales</legend>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" placeholder="Gael Uriel " required>
+            <br>
+            <!--=======================================================================-->
+            <label for="APaterno">Apellido Paterno:</label>
+            <input type="text" id="APaterno" placeholder="López" required>
+            <br>
+            <!--===========================================================================-->
+            <label for="Genenero">Genero:</label>
+            <select id="Genero">
+                <option value="F">Femenino</option>
+                <option value="M">Masculino</option>
+                <option value="X">Prefiero no decirlo</option>
+            </select>
+            <!--=======================================================================-->
+            <!--Nuevo tipo de dato DATE-->
+            <label for="FNacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="FNacimiento" required>
+            <br>
+            <!--======================================================================-->
+            <!--TIPO de dato EMAIL-->
+            <label for="Correo">Correo Electronico:</label>
+            <input type="email" id="Correo"placeholder="gael@ejemplo.com" required>
+            <br>
+            <!--======================================================================-->
+
+        </fieldset>
+        <fieldset>
+            <legend>Datos de contacto</legend>
+            <label for="email">Correo Electronico</label>
+            <input type="email" id="Correo"placeholder="gael@ejemplo.com" required>
+            <br>
+            <!---->
+            <label for="numTel">Número Telefonico</label>
+            <input type="tel" id="numTel" placeholder="(+52)7641033824">
+            <br>
+            <!---->
+            <label for="horario">Favor de Contactar en el Horario:</label>
+            <input type="time" id="horario" placeholder="09:00">
+            <input type="time" id="horario" placeholder="18:00">
+        </fieldset>
+        <fieldset>
+            <legend>Datos de Acceso</legend>
+        <label for="usuario" >Usuario:</label>
+        <input type="text"  id="usuario" placeholder="gaellopezga">
+        <br>
+        <!--Nuevo tipo de dato PASSWORD-->
+        <label for="comtrasena">Contrasena:</label>
+        <input type="password" id="contrasena" placeholder="**********" required>
+        <br>
+        <label for="confirmarCont">Confirmar Contrasena</label>
+        <input type="password"  id="confirmarCont" placeholder="*********" required>
+        <br>
+        </fieldset>
+       <fieldset>
+       <legend>Datos de Ubicacion</legend>
+       <label for="direccion">Direccion: </label>
+       <input type="text" id="direccion" placeholder="Calle, Número, Colonia, Ciudad, Estado, CP">
+       <label for="pais">País: </label>
+       <input type="text" id="pais" placeholder="México">
+       <label for="estado">Estado: </label>
+       <input type="text" id="estado" placeholder="Ciudad de México">
+       <label for="ciudad">Ciudad: </label>
+       <input type="text" id="ciudad" placeholder="Ciudad de México">
+       <label for="codigoPostal">Código Postal: </label>
+       <input type="text" id="codigoPostal" placeholder="01234">
+       </fieldset>
+        </form>
+    </main>
     
 </body>
 </html>
