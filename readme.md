@@ -15,6 +15,15 @@ Periodo: Septiembre - Diciembre 2026
 
 🔗 https://galeexp.github.io/Practicas-Aplicaciones_Web/
 
+---
+
+### Configuración en GitHub
+
+![Configuración de GitHub Pages](img/github-pages.png)
+
+---
+
+
 #### Comandos usados
 
 ```bash
@@ -35,3 +44,4 @@ git push origin --delete Practica03
 ```
 
 Activación: **Settings → Pages → Deploy from a branch → `main` / `(root)` → Save**.
+
