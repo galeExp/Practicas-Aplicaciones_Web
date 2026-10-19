@@ -72,6 +72,7 @@
             <input type="time" id="horario" placeholder="18:00">
         </fieldset>
         <br>
+        
         <fieldset>
             <legend>Datos de Acceso</legend>
         <label for="usuario" >Usuario:</label>
@@ -111,7 +112,12 @@
     <br>
     <!--======================================================================-->
     <!--Visualizacion de citas-->
-    <form>
+    <h4>Fin Formulario de registro <hr>
+        Inicio de nuevos recursos para uso futuro
+    </h4>
+    <br>
+    <fieldset>
+   <form>
         <legend>Visualizacion de citas</legend>
         <br>
     <label for="mesCita">Fecha de la cita:</label>
@@ -166,6 +172,139 @@
         <td style="border: 1px solid black">Reprogramada</td>
     </tr>
     </table>
+</fieldset>
+<fieldset>
+    <legend>Configuracion de Interfaz </legend>
+    <label for="fontColor">Color  de la fuente:</label>
+    <input type="color" id="fontColor">
+    <br>
+    <label for="backgroundColor">Color de fondo:</label>
+    <input type="color"  id="background" value="#CCC">
+
+</fieldset>
+<fieldset>
+    <legend>Configuracion de Mi cuenta/perfil:</legend>
+    <label for="userPhoto"> Foto de Perfil</label>
+    <input type="file" id="userPhoto" accept="img/*">
+    <br>
+    <input type="image" id="buttonNext" src="img/placidplace-arrow-10664_512.gif" alt="siguiente" width="50" height="50">
+    <input type="hidden" id="userId" value=""25XXXX>
+</fieldset>
+<br>
+<fieldset>
+    <legend>Datos Fiscales:</legend>
+    <label for="rfc">Registro Federal de Causantes:</label>
+    <input type="text" id="rfc" maxlength="13" placeholder="LOGUXXXXXX">
+    <br>
+    <label for="fiscalSituacion">Constancia de Situacion Fiscal:</label>
+    <input type="file" id="fiscalSituacion" accept=".pdf">
+    <input type="hidden" id="userId" value="25XXXX">
+
+</fieldset>
+<br>
+<fieldset>
+    <legend>Solicitud de Cita:</legend>
+    <label for="dateAppoiment">Fecha de la Cita:</label>
+    <input type="datetime-local" id="dateAppoiment"></label>
+    <br>
+    <br>
+    <label for="descriptionText">Descripcion de la Cita:</label>
+    <textarea id="descriptionText"></textarea>
+
+</fieldset>
+ <br>
+<fieldset>
+    <legend>Solicitud de Herramientas para Servicio Mecanico:</legend>
+    <label for="resourseCategory">Categoria de Recurso:</label>
+    <input type="radio" id="resourceTool" name="resourceCategory" value="Refaccion">Refaccion
+    <input type="radio" id="resourceTool" name="resourceCategory" value="tool">Herramienta
+    <br>
+    <label for="resourceCategory">Pieza:</label>
+    <label for="toolName">Elige una pieza:</legend>
+    <br>
+    <select >
+        <optgroup label="Piezas de Motor">
+            <option value="Bujia">Bujía</option>
+            <option value="Filtro">Filtro</option>
+            <option value="banda_distribucion">Banda de Distribución</option>
+        </optgroup>
+        <optgroup label="Piezas de Transmición">
+            <option value="disco_embrague">Disco de Embrague</option>
+            <option value="collarin">Collarín de Embrague</option>
+            <option value="semieje">Semieje de transmision</option>
+        </optgroup>
+        <optgroup label="Piezas Suspencion">
+            <option value="amortiguador">Amortiguador</option>
+            <option value="roptula">Rotula</option>
+        </optgroup>
+        <optgroup label="Llaves y Herramientas Epecializadas">
+            <option value="llave_convinada"> Llave conbinada</option>
+            <option value="llave_torx">Llave Torx</option>
+            <option value="llave_dinamica">Llave Dinamica</option>
+            <option value="extractor_poleas">Extractor de Poleas</option>
+            <option value="compresor_resortes"> Compresor de Resortes</option>
+            <option value="scanner_obd2">Escaner autromotriz OBD-II</option>
+        </optgroup>
+    </select>
+    <label for="toolQuantity">Cantidad:</label>
+    <input type="number"  id="toolQuantity">
+</fieldset>
+<br>
+<fieldset>
+    <br>
+    <form>
+    <h4>Herramientas para la orden de servicio</h4>
+    <br>
+    <table style="border: 1px solid black">
+    <tr>
+        <th style="border: 1px solid black">No.</th>
+        <th style="border: 1px solid black">Herramienta</th>
+        <th style="border: 1px solid black">Categoria</th>
+        <th style="border: 1px solid black">Cantidad</th>
+        <th style="border: 1px solid black">Unidad</th>
+    </tr>
+    <tr>
+        <th style="border: 1px solid black">1.</th>
+        <th style="border: 1px solid black">Llave Conbinada</th>
+        <th style="border: 1px solid black">Herramienta Manual</th>
+        <th style="border: 1px solid black">4</th>
+        <th style="border: 1px solid black">Piezas</th>
+        
+    </tr>
+    <tr>
+        <th style="border: 1px solid black">2.</th>
+        <th style="border: 1px solid black">Llave dinamometrica</th>
+        <th style="border: 1px solid black">Herramienta especializada</th>
+        <th style="border: 1px solid black">2</th>
+        <th style="border: 1px solid black">Piezas</th>
+        
+    </tr>
+    <tr>
+        <th style="border: 1px solid black">3.</th>
+        <th style="border: 1px solid black">Extractor de Poleas</th>
+        <th style="border: 1px solid black">Herramienta especializada</th>
+        <th style="border: 1px solid black">1</th>
+        <th style="border: 1px solid black">juego</th>
+        
+    </tr>
+    <tr>
+        <th style="border: 1px solid black">4.</th>
+        <th style="border: 1px solid black">Llave Torx </th>
+        <th style="border: 1px solid black">Herramienta manual</th>
+        <th style="border: 1px solid black">3</th>
+        <th style="border: 1px solid black">juego</th>
+        
+    </tr>
+    <tr>
+        <th colspan="3" style="border: 1px solid black">Total de Unidades</th>
+        <th style="border: 1px solid black">10</th>
+        <th style="border: 1px solid black">-</th>
+        
+    </tr>
+    </table>
+
+</fieldset>
+
 
     </main>
     
