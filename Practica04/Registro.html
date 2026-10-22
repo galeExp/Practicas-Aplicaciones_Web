@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MecaGest:Formulario de Registro de Nuevos Usuarios - 250954</title>
+    <link rel="stylesheet" href="/Practica04/css/styles.css">
 </head>
 <body>
     <header>
@@ -70,6 +71,41 @@
             <label for="horario">Favor de Contactar en el Horario:</label>
             <input type="time" id="horario" placeholder="09:00">
             <input type="time" id="horario" placeholder="18:00">
+            <br>
+            <h4>Redes Sociales</h4>
+            <label for="urlFacebook">Facebook:</label>
+            <input type="checkbox" id="socialNetwoks">
+            <input type="url" placeholder="">
+
+            <label for="urlIntagram">Instagram:</label>
+            <input type="checkbox" id="socialNetwoks">
+
+            <input type="url" placeholder="">
+
+            <label for="urlIntagram">Linkedin:</label>
+            <input type="checkbox" id="socialNetwoks">
+
+            <input type="url" placeholder="">
+
+            <label for="urlYoutube">Youtube:</label>
+            <input type="checkbox" id="socialNetwoks">
+
+            <input type="url" placeholder="">
+
+            <label for="urlGitHub">GitHub:</label>
+            <input type="checkbox" id="socialNetwoks">
+
+            <input type="url" placeholder="">
+
+            <label for="urlWhatsApp">WhatsApp:</label>
+            <input type="checkbox" id="socialNetwoks">
+
+            <input type="url" placeholder="">
+
+
+
+
+
         </fieldset>
         <br>
         
@@ -112,6 +148,9 @@
     <br>
     <!--======================================================================-->
     <!--Visualizacion de citas-->
+    <!--===================================================================================================================================-->
+    <!--=======================================================================================================================)===========-->
+
     <h4>Fin Formulario de registro <hr>
         Inicio de nuevos recursos para uso futuro
     </h4>
@@ -121,9 +160,15 @@
         <legend>Visualizacion de citas</legend>
         <br>
     <label for="mesCita">Fecha de la cita:</label>
-    <input type="month" id="mesCita">
-    <button type="verCita">mostrar</button>
-    </form>
+    <input type="radio" name="appimentFilter" value="Month" id="appoimentByMonth" checked>Mes
+    <input type="radio" name="appimentFilter" value="Week" id="appoimentByWeek" >Semana
+    <br>
+    <input type="month">
+    <br>
+    <input type="week" disabled>
+
+    <button id="verCita">mostrar</button>
+    
     <br>
     <h4>Citas Programadas en el mes :</h4>
     <br>
@@ -172,15 +217,22 @@
         <td style="border: 1px solid black">Reprogramada</td>
     </tr>
     </table>
+    </form>
 </fieldset>
+<br>
+<!--=======================================================================================-->
 <fieldset>
     <legend>Configuracion de Interfaz </legend>
     <label for="fontColor">Color  de la fuente:</label>
     <input type="color" id="fontColor">
-    <br>
+    <br> 
     <br>    
     <label for="backgroundColor">Color de fondo:</label>
     <input type="color"  id="background" value="#CCC">
+    <br>
+    <label for="soundsVolume">Volumen de Reproduccion de sonidos</label>
+    <input type="range" id="soundsVolume" min="0" max="100" value="80" >
+    <button id="muteSounds">Silenciar Sonidos</button>
 
 </fieldset>
 <br>
@@ -211,6 +263,17 @@
     <br>
     <label for="dateAppoiment">Fecha de la Cita:</label>
     <input type="datetime-local" id="dateAppoiment"></label>
+    <br>
+    <br>
+    <label for="locations">Sucuarsales:</label>
+    <input list="locationsList" placeholder="Busca tu sucursal">
+    <datalist id="locationsList">
+        <option> Xicotepec, Centro</option>
+        <option>Xicotepec,El Tabacal</option>
+        <option>San Isidro, Tierra Negra</option>
+        <option>Necaxa, Canaditas</option>
+        <option>Huauchinango, Petrolera 1-</option>
+    </datalist>
     <br>
     <br>
     <label for="descriptionText">Descripcion de la Cita:</label>
