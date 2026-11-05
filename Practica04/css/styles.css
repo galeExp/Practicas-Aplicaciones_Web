@@ -1,262 +1,631 @@
-/* ==========================================================
-   MecaGest — Hoja de estilos
-   Paleta: carbón / naranja / teal
-   Tipografía: Barlow Condensed (títulos) + Barlow (texto)
-   ========================================================== */
+/* ========================================================================== */
+/* MecaGest Desktop — Sistema por Bloques de Formulario (Optimizado)         */
+/* CSS Puro | Estructura Modular, Alineada y Sin Duplicados                  */
+/* ========================================================================== */
 
+
+/* ========================================================================== */
+/* BLOQUE 1: TOKENS DE DISEÑO Y VARIABLES                                     */
+/* ========================================================================== */
 :root {
-    --carbon-900: #1d2023;
-    --carbon-800: #404142;
-    --carbon-700: #141516;
-    --carbon-600: #9ca3aa7f;
-    --carbon-400: #868b90;
-    --carbon-200: #b2b5b8;
-    --carbon-100: #ebf1f4;
+  color-scheme: light;
 
-    --orange-500: #ba73ee;
-    --orange-600: #e55a0d;
-    --orange-300: #ff9a5c;
+  /* Colores primarios */
+  --mg-navy-950: #102338;
+  --mg-navy-900: #17324d;
+  --mg-navy-800: #21435f;
+  --mg-navy-700: #2d5877;
 
-    --teal-500: #dce8e7;
-    --teal-600: #ffffff;
-    --teal-900: #1c3432;
+  /* Accent / Acción */
+  --mg-orange-700: #a9470b;
+  --mg-orange-600: #bd5510;
+  --mg-orange-500: #d97724;
+  --mg-orange-300: #f2a45e;
+  --mg-orange-100: #fff1e5;
 
-    --radius: 8px;
-    --font-title: "Barlow Condensed", "Arial Narrow", Arial, sans-serif;
-    --font-body: "Barlow", "Segoe UI", Arial, sans-serif;
+  /* Escala Neutral */
+  --mg-steel-700: #475569;
+  --mg-steel-600: #64748b;
+  --mg-steel-500: #8291a2;
+  --mg-steel-300: #cbd5df;
+  --mg-steel-200: #dce4eb;
+  --mg-steel-100: #edf1f5;
+
+  /* Superficies y Texto */
+  --mg-graphite: #1e293b;
+  --mg-text: #263445;
+  --mg-text-muted: #64748b;
+  --mg-surface: #ffffff;
+  --mg-background: #f3f6f9;
+  --mg-border: #dce4eb;
+
+  /* Estados Semánticos */
+  --mg-success: #166534;
+  --mg-success-bg: #dcfce7;
+  --mg-warning: #92400e;
+  --mg-warning-bg: #fef3c7;
+  --mg-danger: #991b1b;
+  --mg-danger-bg: #fee2e2;
+  --mg-info: #1e40af;
+  --mg-info-bg: #dbeafe;
+
+  /* Dimensiones y Efectos */
+  --mg-radius-sm: 6px;
+  --mg-radius-md: 10px;
+  --mg-radius-lg: 16px;
+  --mg-shadow-sm: 0 1px 3px rgb(16 35 56 / 5%), 0 1px 2px rgb(16 35 56 / 6%);
+  --mg-shadow-md: 0 10px 25px -5px rgb(16 35 56 / 8%), 0 8px 10px -6px rgb(16 35 56 / 6%);
+  --mg-focus: 0 0 0 3px rgb(217 119 36 / 25%);
+
+  --mg-font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mg-transition: 160ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-*, *::before, *::after { box-sizing: border-box; }
+
+/* ========================================================================== */
+/* BLOQUE 2: RESET Y BASE GENERAL                                             */
+/* ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+  background: var(--mg-background);
+}
 
 body {
-    margin: 0;
-    background: var(--carbon-900);
-    color: var(--carbon-100);
-    font-family: var(--font-body);
-    line-height: 1.55;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--mg-background);
+  color: var(--mg-text);
+  font-family: var(--mg-font);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Encabezado */
-header {
-    background: var(--carbon-800);
-    border-bottom: 6px solid var(--orange-500);
-    padding: 2rem 1.5rem 1.5rem;
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 0.5rem;
+  color: var(--mg-navy-900);
+  font-weight: 700;
+  line-height: 1.25;
 }
-header > * { max-width: 960px; margin-left: auto; margin-right: auto; }
-header p { margin-top: 0; margin-bottom: 0; color: var(--carbon-200); }
 
-h1 {
-    margin: 0 auto 0.1rem;
-    font-family: var(--font-title);
-    font-weight: 700;
-    font-size: Tahoma (2.8rem, 8vw, 4.5rem);
-    line-height: 1;
-    color: var(--orange-500);
-}
-h2 {
-    margin: 0 auto 0.4rem;
-    font-family: var(--font-title);
-    font-weight: 600;
-    font-size: clamp(1.4rem, 4vw, 2rem);
-}
-h4 {
-    margin: 1rem 0 0.5rem;
-    font-family: var(--font-title);
-    font-weight: 600;
-    font-size: 1.35rem;
-    color: var(--teal-500);
-}
-hr { border: 0; border-top: 1px solid var(--carbon-600); margin: 0.75rem 0; }
+h1 { font-size: clamp(1.75rem, 2.5vw, 2.25rem); }
+h2 { font-size: clamp(1.3rem, 1.8vw, 1.65rem); }
+h3 { font-size: 1.15rem; }
+h4 { font-size: 1rem; }
 
-main { max-width: 960px; margin: 0 auto; padding: 1.5rem 1.25rem 3rem; }
-form { margin: 0; }
+p {
+  margin: 0 0 1rem;
+  color: var(--mg-text-muted);
+}
 
-/* Secciones */
+
+/* ========================================================================== */
+/* BLOQUE 3: CABECERA Y TITULAR DEL FORMULARIO / PÁGINA                       */
+/* ========================================================================== */
+body > header,
+.page-header {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border-radius: var(--mg-radius-lg);
+  background: linear-gradient(120deg, var(--mg-navy-950), var(--mg-navy-800));
+  color: #ffffff;
+  box-shadow: var(--mg-shadow-md);
+  margin-bottom: 1.5rem;
+}
+
+.page-header h1,
+.page-header h2 {
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+
+.page-header p {
+  color: #d9e4ee;
+  margin: 0;
+  max-width: 680px;
+}
+
+
+/* ========================================================================== */
+/* BLOQUE 4: CONTENEDOR PRINCIPAL DEL FORMULARIO                              */
+/* ========================================================================== */
+body > main {
+  width: min(1180px, calc(100% - 2.5rem));
+  margin: 2rem auto 4rem;
+}
+
+.form-container,
+body > main > form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--mg-border);
+  border-radius: var(--mg-radius-lg);
+  background: var(--mg-surface);
+  box-shadow: var(--mg-shadow-sm);
+}
+
+
+/* ========================================================================== */
+/* BLOQUE 5: SECCIONES / FIELDSETS DEL FORMULARIO                             */
+/* ========================================================================== */
 fieldset {
-    margin: 0 0 1.25rem;
-    padding: 1.25rem 1.25rem 1.1rem;
-    background: var(--carbon-800);
-    border: 1px solid var(--carbon-600);
-    border-left: 4px solid var(--orange-500);
-    border-radius: var(--radius);
-    min-inline-size: 0;
+  min-width: 0;
+  margin: 0;
+  padding: 1.25rem;
+  border: 1px solid var(--mg-border);
+  border-radius: var(--mg-radius-md);
+  background: var(--mg-surface);
 }
+
 legend {
-    padding: 0.1rem 0.75rem;
-    background: var(--orange-500);
-    color: var(--carbon-900);
-    border-radius: 4px;
-    font-family: var(--font-title);
-    font-weight: 700;
-    font-size: 1.2rem;
+  padding: 0 0.5rem;
+  color: var(--mg-navy-800);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
-/* Etiquetas y campos */
-label {
-    display: inline-block;
-    margin: 0.45rem 0.4rem 0.2rem 0;
-    font-weight: 500;
-    color: var(--carbon-200);
+
+/* ========================================================================== */
+/* BLOQUE 6: GRILLA Y LAYOUT DE CAMPOS                                       */
+/* ========================================================================== */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  align-items: start;
 }
 
-input[type="text"], input[type="email"], input[type="tel"], input[type="url"],
-input[type="password"], input[type="number"], input[type="date"],
-input[type="time"], input[type="month"], input[type="week"],
-input[type="datetime-local"], input[list], select, textarea {
-    max-width: 100%;
-    margin: 0.2rem 0.5rem 0.2rem 0;
-    padding: 0.5rem 0.7rem;
-    background: var(--carbon-900);
-    color: var(--carbon-100);
-    border: 1px solid var(--carbon-600);
-    border-radius: 6px;
-    font-family: inherit;
-    font-size: 1rem;
-    transition: border-color 0.15s, box-shadow 0.15s;
+.form-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
 }
-input::placeholder, textarea::placeholder { color: var(--carbon-400); }
 
-textarea { display: block; width: 100%; min-height: 6rem; resize: vertical; }
+.form-group--full {
+  grid-column: 1 / -1;
+}
 
-input[type="date"], input[type="time"], input[type="month"],
-input[type="week"], input[type="datetime-local"] { color-scheme: dark; }
+.form-hint {
+  margin-top: 0.35rem;
+  color: var(--mg-text-muted);
+  font-size: 0.8rem;
+}
 
-input:focus, select:focus, textarea:focus,
-button:focus-visible, input[type="submit"]:focus-visible,
-input[type="reset"]:focus-visible {
-    outline: none;
-    border-color: var(--teal-500);
-    box-shadow: 0 0 0 3px rgba(46, 196, 182, 0.35);
-}
-input:disabled, select:disabled { opacity: 0.45; cursor: not-allowed; }
 
-input[type="checkbox"], input[type="radio"] {
-    accent-color: var(--orange-500);
-    width: 1.1rem;
-    height: 1.1rem;
-    margin: 0 0.3rem 0 0.6rem;
-    vertical-align: middle;
+/* ========================================================================== */
+/* BLOQUE 7: ETIQUETAS (LABELS) Y ENTRADAS DE CONTACTO                        */
+/* ========================================================================== */
+label,
+.form-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.35rem;
+  color: var(--mg-steel-700);
+  font-size: 0.875rem;
+  font-weight: 600;
 }
-input[type="range"] {
-    accent-color: var(--teal-500);
-    vertical-align: middle;
-    width: min(220px, 100%);
+
+input,
+select,
+textarea {
+  font: inherit;
 }
-input[type="color"] {
-    width: 3rem;
-    height: 2.2rem;
-    padding: 0.15rem;
-    background: var(--carbon-900);
-    border: 1px solid var(--carbon-600);
-    border-radius: 6px;
-    cursor: pointer;
-    vertical-align: middle;
+
+/* Regla unificada para campos de entrada estándar (Texto, WhatsApp, Email, Teléfono) */
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="reset"]):not([type="button"]):not([type="range"]):not([type="color"]):not([type="file"]),
+select,
+textarea {
+  display: block;
+  width: 100%;
+  height: 42px;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid var(--mg-steel-300);
+  border-radius: var(--mg-radius-sm);
+  outline: none;
+  background: #ffffff;
+  color: var(--mg-graphite);
+  line-height: 1.4;
+  transition: border-color var(--mg-transition), box-shadow var(--mg-transition);
 }
-input[type="file"] { max-width: 100%; color: var(--carbon-200); font-family: inherit; }
+
+textarea {
+  height: auto;
+  min-height: 100px;
+  padding: 0.65rem 0.85rem;
+  resize: vertical;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #94a3b8;
+  opacity: 1;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+  border-color: var(--mg-steel-500);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--mg-orange-500);
+  box-shadow: var(--mg-focus);
+}
+
+input:disabled,
+select:disabled,
+textarea:disabled {
+  cursor: not-allowed;
+  background: var(--mg-steel-100);
+  color: var(--mg-text-muted);
+  opacity: 0.75;
+}
+
+
+/* ========================================================================== */
+/* BLOQUE 8: MÓDULO WHATSAPP Y ADJUNCIÓN DE CÓDIGO QR                         */
+/* ========================================================================== */
+
+/* Estilo contenedor general para carga de archivos */
+input[type="file"] {
+  height: auto;
+  padding: 0.35rem;
+  border: 1px dashed var(--mg-steel-300);
+  border-radius: var(--mg-radius-sm);
+  background: var(--mg-steel-100);
+  color: var(--mg-text-muted);
+}
+
 input[type="file"]::file-selector-button {
-    margin-right: 0.75rem;
-    padding: 0.45rem 0.9rem;
-    background: var(--teal-900);
-    color: var(--teal-500);
-    border: 1px solid var(--teal-600);
-    border-radius: 6px;
-    font-family: inherit;
-    font-weight: 500;
-    cursor: pointer;
+  margin-right: 0.75rem;
+  padding: 0.4rem 0.75rem;
+  border: 0;
+  border-radius: calc(var(--mg-radius-sm) - 2px);
+  background: var(--mg-navy-900);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--mg-transition);
 }
+
 input[type="file"]::file-selector-button:hover {
-    background: var(--teal-600);
-    color: var(--carbon-900);
-}
-input[type="image"] {
-    display: block;
-    margin-top: 0.5rem;
-    border-radius: 6px;
-    background: var(--carbon-700);
+  background: var(--mg-navy-800);
 }
 
-/* Botones */
-button, input[type="submit"], input[type="reset"] {
-    margin: 0.5rem 0.5rem 0.25rem 0;
-    padding: 0.6rem 1.4rem;
-    border-radius: 6px;
-    font-family: var(--font-title);
-    font-size: 1.15rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.15s, color 0.15s;
-}
-input[type="submit"] {
-    background: var(--orange-500);
-    color: var(--carbon-900);
-    border: 2px solid var(--orange-500);
-}
-input[type="submit"]:hover:not(:disabled) {
-    background: var(--orange-600);
-    border-color: var(--orange-600);
-}
-input[type="submit"]:disabled {
-    background: var(--carbon-700);
-    border-color: var(--carbon-600);
-    color: var(--carbon-400);
-    cursor: not-allowed;
-}
-input[type="reset"], button {
-    background: transparent;
-    color: var(--teal-500);
-    border: 2px solid var(--teal-500);
-}
-input[type="reset"]:hover, button:hover {
-    background: var(--teal-500);
-    color: var(--carbon-900);
+/* Apartado específico para Adjuntar Código QR de WhatsApp */
+.form-group--whatsapp-qr {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1rem;
+  border: 1px dashed var(--mg-steel-300);
+  border-radius: var(--mg-radius-md);
+  background: #fdfefe;
 }
 
-/* Tablas */
+.form-group--whatsapp-qr label::before {
+  content: "";
+  font-size: 1rem;
+}
+
+.form-group--whatsapp-qr input[type="file"] {
+  background: #ffffff;
+  border-color: var(--mg-steel-300);
+  cursor: pointer;
+}
+
+
+/* ========================================================================== */
+/* BLOQUE 9: OTROS CONTROLES (CHECKBOX, RADIO, RANGE, COLOR)                  */
+/* ========================================================================== */
+input[type="checkbox"],
+input[type="radio"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin: 0;
+  accent-color: var(--mg-orange-600);
+  cursor: pointer;
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+  cursor: pointer;
+}
+
+.form-check label {
+  margin: 0;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: var(--mg-orange-600);
+  cursor: pointer;
+}
+
+input[type="color"] {
+  width: 3.5rem;
+  height: 42px;
+  padding: 0.2rem;
+  border: 1px solid var(--mg-border);
+  border-radius: var(--mg-radius-sm);
+  background: #ffffff;
+  cursor: pointer;
+}
+
+
+/* ========================================================================== */
+/* BLOQUE 10: TABLAS DE DATOS DENTRO DEL FORMULARIO                          */
+/* ========================================================================== */
+.table-container {
+  width: 100%;
+  margin: 0.5rem 0;
+  overflow-x: auto;
+  border: 1px solid var(--mg-border);
+  border-radius: var(--mg-radius-md);
+  box-shadow: var(--mg-shadow-sm);
+}
+
 table {
-    width: 100%;
-    margin: 0.5rem 0 0.25rem;
-    border-collapse: collapse;
-    background: var(--carbon-900);
-    font-size: 0.95rem;
+  width: 100%;
+  margin: 0;
+  border-collapse: separate !important;
+  border-spacing: 0;
+  background: var(--mg-surface);
+  color: var(--mg-text);
+  font-size: 0.875rem;
 }
+
+thead {
+  background: var(--mg-navy-950);
+  color: #ffffff;
+}
+
+thead th {
+  border-bottom: 1px solid var(--mg-navy-700);
+  color: #ffffff;
+  font-size: 0.825rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
 th, td {
-    padding: 0.6rem 0.75rem;
-    border: 1px solid var(--carbon-600) !important; /* anula el style en línea */
-    text-align: left;
-    vertical-align: top;
+  padding: 0.75rem 1rem;
+  border-right: 1px solid var(--mg-border);
+  border-bottom: 1px solid var(--mg-border);
+  text-align: left;
+  vertical-align: middle;
 }
-tr:first-child th {
-    background: var(--carbon-700);
-    color: var(--orange-500);
-    border-bottom: 3px solid var(--orange-500) !important;
-    font-family: var(--font-title);
-    font-size: 1.1rem;
-    font-weight: 600;
+
+th:last-child, td:last-child {
+  border-right: 0;
 }
-tr:not(:first-child) th { font-weight: 400; color: var(--carbon-100); }
-tr:not(:first-child):nth-child(even) td,
-tr:not(:first-child):nth-child(even) th { background: var(--carbon-800); }
-tr:not(:first-child):hover td,
-tr:not(:first-child):hover th { background: var(--teal-900); }
-tr:last-child th[colspan] { color: var(--teal-500); font-weight: 600; text-align: right; }
 
-/* Listas desplegables */
-optgroup { font-family: var(--font-title); font-size: 1.05rem; color: var(--orange-300); }
-option { font-family: var(--font-body); color: var(--carbon-100); background: var(--carbon-900); }
+tbody tr:last-child td {
+  border-bottom: 0;
+}
 
-/* Móvil */
-@media (max-width: 700px) {
-    header { padding: 1.5rem 1rem 1.2rem; }
-    main { padding: 1rem 0.75rem 2rem; }
-    fieldset { padding: 1rem 0.9rem; }
-    input[type="text"], input[type="email"], input[type="tel"], input[type="url"],
-    input[type="password"], input[type="number"], input[list], select {
-        width: 100%;
-        margin-right: 0;
-    }
-    table { display: block; overflow-x: auto; }
+tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+tbody tr:hover {
+  background: var(--mg-orange-100);
+}
+
+
+/* ========================================================================== */
+/* BLOQUE 11: BADGES DE ESTADO                                               */
+/* ========================================================================== */
+.badge,
+.status-badge {
+  display: inline-flex;
+  height: 24px;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0 0.65rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.status--pending, .status--programmed, .status--in-progress {
+  background: var(--mg-warning-bg);
+  color: var(--mg-warning);
+}
+
+.status--completed, .status--paid, .status--available {
+  background: var(--mg-success-bg);
+  color: var(--mg-success);
+}
+
+.status--cancelled, .status--overdue, .status--unavailable {
+  background: var(--mg-danger-bg);
+  color: var(--mg-danger);
+}
+
+.status--diagnosis, .status--informed, .status--partial {
+  background: var(--mg-info-bg);
+  color: var(--mg-info);
+}
+
+
+/* ========================================================================== */
+/* BLOQUE 12: MENSAJES Y ALERTAS DEL FORMULARIO                              */
+/* ========================================================================== */
+.alert {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0.5rem 0;
+  padding: 0.85rem 1.15rem;
+  border: 1px solid transparent;
+  border-radius: var(--mg-radius-sm);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.alert--success { border-color: #bbf7d0; background: var(--mg-success-bg); color: var(--mg-success); }
+.alert--warning { border-color: #fde68a; background: var(--mg-warning-bg); color: var(--mg-warning); }
+.alert--danger  { border-color: #fecaca; background: var(--mg-danger-bg); color: var(--mg-danger); }
+.alert--info    { border-color: #bfdbfe; background: var(--mg-info-bg); color: var(--mg-info); }
+
+
+/* ========================================================================== */
+/* BLOQUE 13: BOTONES Y ACCIONES DEL FORMULARIO                              */
+/* ========================================================================== */
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--mg-border);
+}
+
+button,
+.btn,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  display: inline-flex;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0 1.25rem;
+  border: 1px solid transparent;
+  border-radius: var(--mg-radius-sm);
+  background: var(--mg-navy-900);
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all var(--mg-transition);
+}
+
+button:hover,
+.btn:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+  background: var(--mg-navy-800);
+  box-shadow: var(--mg-shadow-sm);
+}
+
+.btn--primary {
+  background: var(--mg-orange-600);
+  color: #ffffff;
+}
+
+.btn--primary:hover {
+  background: var(--mg-orange-700);
+}
+
+.btn--secondary,
+input[type="reset"] {
+  border-color: var(--mg-border);
+  background: var(--mg-steel-100);
+  color: var(--mg-steel-700);
+}
+
+.btn--secondary:hover,
+input[type="reset"]:hover {
+  border-color: var(--mg-steel-300);
+  background: var(--mg-steel-200);
+}
+
+.btn--danger {
+  background: var(--mg-danger);
+  color: #ffffff;
+}
+
+.btn--danger:hover {
+  background: #7f1d1d;
+}
+
+button:active,
+.btn:active,
+input[type="submit"]:active,
+input[type="reset"]:active {
+  transform: translateY(1px);
+}
+
+button:disabled,
+.btn:disabled,
+input:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  box-shadow: none;
+  transform: none;
+}
+
+
+/* ========================================================================== */
+/* BLOQUE 14: ADAPTABILIDAD RESPONSIVA (MOBILE / TABLET)                      */
+/* ========================================================================== */
+@media (max-width: 768px) {
+  body > main {
+    width: calc(100% - 1.5rem);
+    margin-top: 1rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .form-actions .btn,
+  .form-actions button,
+  .form-actions input {
+    width: 100%;
+  }
+}
+
+
+/* ========================================================================== */
+/* BLOQUE 15: ACCESIBILIDAD Y REDUCCIÓN DE MOVIMIENTO                         */
+/* ========================================================================== */
+:focus-visible {
+  outline: 3px solid rgb(217 119 36 / 55%);
+  outline-offset: 2px;
 }
 
 @media (prefers-reduced-motion: reduce) {
-    * { transition: none !important; }
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
