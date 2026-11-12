@@ -1,4 +1,6 @@
-/* Variables con la paleta de colores especificada */
+/* ==========================================================================
+   1. VARIABLES Y ESTILOS BASE
+   ========================================================================== */
 :root {
     --azul-oscuro: #1E3A8A;
     --naranja: #F97316;
@@ -7,9 +9,9 @@
     --grafito: #1F2937;
     --blanco: #FFFFFF;
     --fondo-pantalla: #F8FAFC;
+    --fondo-campo: #F1F5F9;
 }
 
-/* Estilos base */
 body {
     font-family: system-ui, -apple-system, sans-serif;
     background-color: var(--fondo-pantalla);
@@ -19,309 +21,28 @@ body {
 }
 
 main {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-/* Encabezado */
-header {
-    text-align: center;
-    margin-bottom: 24px;
-}
-
-header h1 {
-    color: var(--azul-oscuro);
-    margin: 0 0 4px 0;
-}
-
-header h2 {
-    color: var(--gris-acero);
-    font-size: 1.1rem;
-    margin: 0 0 8px 0;
-}
-
-header p {
-    color: var(--grafito);
-    font-size: 0.9rem;
-    margin: 0;
-}
-
-/* Estilo de Tarjetas (Cards) para los Fieldsets y Form Actions */
-fieldset, .card-footer {
-    background-color: var(--blanco);
-    border: 1px solid #E2E8F0;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-}
-
-legend {
-    color: var(--azul-oscuro);
-    font-weight: bold;
-    font-size: 1.05rem;
-    padding: 0 8px;
-}
-
-/* Inputs y Selección */
-label {
-    display: block;
-    margin-top: 12px;
-    margin-bottom: 4px;
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="date"],
-input[type="time"],
-input[type="tel"],
-input[type="url"],
-input[type="file"],
-select {
-    width: 100%;
-    padding: 9px 12px;
-    border: 1px solid var(--gris-acero);
-    border-radius: 6px;
-    box-sizing: border-box;
-    font-size: 0.9rem;
-    color: var(--grafito);
-    background-color: var(--blanco);
-}
-
-input:focus, select:focus {
-    outline: none;
-    border-color: var(--azul-oscuro);
-    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.15);
-}
-
-small {
-    display: block;
-    color: var(--gris-acero);
-    font-size: 0.8rem;
-    margin-top: 4px;
-}
-
-/* Elementos Alineados (Horarios y Redes) */
-.inline-fields {
-    display: flex;
-    gap: 10px;
-}
-
-.social-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 8px;
-}
-
-.social-row label {
-    margin: 0;
-    min-width: 80px;
-}
-
-/* Checkbox */
-input[type="checkbox"] {
-    accent-color: var(--naranja);
-    width: 16px;
-    height: 16px;
-}
-
-/* Botones y Términos */
-.terms-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.9rem;
-}
-
-.buttons-row {
-    display: flex;
-    gap: 12px;
-    margin-top: 16px;
-}
-
-input[type="submit"] {
-    background-color: var(--naranja);
-    color: var(--blanco);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
-    flex: 1;
-}
-
-input[type="submit"]:hover:not(:disabled) {
-    background-color: var(--naranja-hover);
-}
-
-input[type="submit"]:disabled {
-    background-color: var(--gris-acero);
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
-input[type="reset"] {
-    background-color: transparent;
-    color: var(--gris-acero);
-    border: 1px solid var(--gris-acero);
-    padding: 10px 20px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-input[type="reset"]:hover {
-    background-color: #F1F5F9;
-    color: var(--grafito);
-}
-/* Selectores de color y barra de volumen */
-input[type="color"] {
-    width: 100%;
-    height: 40px;
-    padding: 3px;
-    border: 1px solid var(--gris-acero);
-    border-radius: 6px;
-    background-color: var(--blanco);
-    cursor: pointer;
-}
-
-input[type="range"] {
-    flex: 1;
-    accent-color: var(--naranja);
-    cursor: pointer;
-}
-
-/* Botón secundario (Silenciar sonidos) */
-.btn-secundario {
-    background-color: var(--azul-oscuro);
-    color: var(--blanco);
-    border: none;
-    padding: 9px 14px;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    cursor: pointer;
-    white-space: nowrap;
-}
-
-.btn-secundario:hover {
-    opacity: 0.9;
-}
-
-/* Actualiza el ancho de main para que las tablas respiren bien */
-main {
     max-width: 850px;
     margin: 0 auto;
 }
 
-/* Barra de filtros */
-.filter-bar {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-}
-
-.radio-group {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    font-size: 0.9rem;
-}
-
-.radio-group label {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    margin: 0;
-    cursor: pointer;
-}
-
-input[type="radio"] {
-    accent-color: var(--naranja);
-}
-
-input:disabled {
-    background-color: #F1F5F9;
-    opacity: 0.6;
-    cursor: not-allowed;
-}
-
-/* Botón naranja reutilizable (para <button>) */
-.btn-primario {
-    background-color: var(--naranja);
-    color: var(--blanco);
+hr {
     border: none;
-    padding: 9px 18px;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
-    white-space: nowrap;
+    height: 1px;
+    background-color: var(--fondo-campo);
+    margin: 10px 0 14px 0;
 }
 
-.btn-primario:hover {
-    background-color: var(--naranja-hover);
-}
-
-/* Tabla de Citas */
-.table-container {
-    overflow-x: auto;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.88rem;
-}
-
-thead th {
-    background-color: var(--azul-oscuro);
-    color: var(--blanco);
-    text-align: left;
-    padding: 10px 12px;
-    font-weight: 600;
-}
-
-thead th:first-child { border-top-left-radius: 6px; }
-thead th:last-child { border-top-right-radius: 6px; }
-
-tbody td {
-    padding: 10px 12px;
-    border-bottom: 1px solid #E2E8F0;
-    vertical-align: top;
-}
-
-tbody tr:hover {
-    background-color: #F8FAFC;
-}
-
-/* Etiquetas de Estatus */
-.badge {
-    display: inline-block;
-    padding: 4px 10px;
-    border-radius: 999px;
-    font-size: 0.78rem;
-    font-weight: 700;
-    white-space: nowrap;
-}
-
-.badge-atendida { background-color: #DCFCE7; color: #166534; }
-.badge-programada { background-color: #DBEAFE; color: #1E40AF; }
-.badge-cancelada { background-color: #FEE2E2; color: #991B1B; }
-.badge-reprogramada { background-color: #FFEDD5; color: #9A3412; }
-
-/* Encabezado y Barra de Navegación */
+/* ==========================================================================
+   2. ENCABEZADO GLOBAL, NAVEGACIÓN Y TÍTULOS DE VISTA
+   ========================================================================== */
 header {
     max-width: 850px;
     margin: 0 auto 24px auto;
     background-color: var(--azul-oscuro);
     padding: 16px 20px;
-    border-radius: 10px;
+    border-radius: 12px;
     text-align: center;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 header h1 {
@@ -347,11 +68,327 @@ nav ul {
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 600;
-    border-radius: 6px;
+    border-radius: 8px;
     transition: background-color 0.2s;
 }
 
 .menu_option a:hover,
 .menu_option a.activo {
     background-color: var(--naranja);
+}
+
+/* Encabezado interno de cada apartado cargado */
+.vista-header {
+    margin-bottom: 16px;
+}
+
+.vista-header h2 {
+    color: var(--azul-oscuro);
+    margin: 0 0 4px 0;
+    font-size: 1.3rem;
+}
+
+.vista-header p {
+    color: var(--gris-acero);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   3. TARJETAS (CARDS) Y CONTENEDORES SIN BORDES
+   ========================================================================== */
+fieldset,
+.card-footer {
+    background-color: var(--blanco);
+    border: none;
+    border-radius: 12px;
+    padding: 22px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+}
+
+legend {
+    color: var(--azul-oscuro);
+    font-weight: bold;
+    font-size: 1.05rem;
+    padding: 0;
+    margin-bottom: 4px;
+}
+
+.inline-fields {
+    display: flex;
+    gap: 10px;
+}
+
+/* ==========================================================================
+   4. FORMULARIOS E INPUTS SIN BORDES
+   ========================================================================== */
+label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="tel"],
+input[type="url"],
+input[type="number"],
+input[type="file"],
+input[list],
+select,
+textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 0.9rem;
+    color: var(--grafito);
+    background-color: var(--fondo-campo);
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    background-color: var(--blanco);
+    box-shadow: 0 0 0 2px rgba(30, 58, 138, 0.25);
+}
+
+input:disabled {
+    background-color: #E2E8F0;
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+/* Estados de validación adaptados sin bordes */
+input.input-error {
+    background-color: #FEF2F2;
+    box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.35);
+}
+
+input.input-ok {
+    background-color: #F0FDF4;
+    box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.3);
+}
+
+.msg-error {
+    color: #DC2626;
+    font-weight: 600;
+}
+
+.msg-ok {
+    color: #16A34A;
+    font-weight: 600;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    accent-color: var(--naranja);
+}
+
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+}
+
+small {
+    display: block;
+    color: var(--gris-acero);
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+/* ==========================================================================
+   5. BOTONES Y ACCIONES DE FORMULARIO
+   ========================================================================== */
+.terms-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+.buttons-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+input[type="submit"],
+.btn-primario {
+    background-color: var(--naranja);
+    color: var(--blanco);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+input[type="submit"] {
+    flex: 1;
+}
+
+input[type="submit"]:hover:not(:disabled),
+.btn-primario:hover {
+    background-color: var(--naranja-hover);
+}
+
+input[type="submit"]:disabled {
+    background-color: var(--gris-acero);
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+input[type="reset"] {
+    background-color: var(--fondo-campo);
+    color: var(--gris-acero);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+input[type="reset"]:hover {
+    background-color: #E2E8F0;
+    color: var(--grafito);
+}
+
+.btn-secundario {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.btn-secundario:hover {
+    opacity: 0.9;
+}
+
+/* ==========================================================================
+   6. VISTA REGISTRO (REDES SOCIALES)
+   ========================================================================== */
+.social-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.social-row label {
+    margin: 0;
+    min-width: 80px;
+}
+
+/* ==========================================================================
+   7. VISTA CITAS (FILTROS, TABLA Y ETIQUETAS DE ESTATUS)
+   ========================================================================== */
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.radio-group {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 0.9rem;
+}
+
+.radio-group label {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+}
+
+thead th {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    text-align: left;
+    padding: 10px 12px;
+    font-weight: 600;
+}
+
+thead th:first-child { border-top-left-radius: 8px; }
+thead th:last-child { border-top-right-radius: 8px; }
+
+tbody td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--fondo-campo);
+    vertical-align: top;
+}
+
+tbody tr:hover {
+    background-color: var(--fondo-pantalla);
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.badge-atendida { background-color: #DCFCE7; color: #166534; }
+.badge-programada { background-color: #DBEAFE; color: #1E40AF; }
+.badge-cancelada { background-color: #FEE2E2; color: #991B1B; }
+.badge-reprogramada { background-color: #FFEDD5; color: #9A3412; }
+
+/* ==========================================================================
+   8. VISTA CONFIGURACIÓN (COLOR Y VOLUMEN)
+   ========================================================================== */
+input[type="color"] {
+    width: 100%;
+    height: 40px;
+    padding: 4px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--fondo-campo);
+    cursor: pointer;
+}
+
+input[type="range"] {
+    flex: 1;
+    accent-color: var(--naranja);
+    cursor: pointer;
 }

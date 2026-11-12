@@ -1,15 +1,15 @@
 <div class="vista-header">
     <h2>Registro de Nuevos Usuarios</h2>
-    <p>Completa los Campos solicitados para tu Registro</p>
+    <p>Completa los campos solicitados para tu registro</p>
 </div>
 
-<!-- Aqui dejaremos el apartado para conectar el wizard -->
+<!-- Aquí dejaremos el apartado para conectar el wizard -->
 <section></section>
 
 <form id="formRegistro">
     <fieldset>
         <legend>Datos Personales</legend>
-        <label for="Titulo">Titulo:</label>
+        <label for="Titulo">Título:</label>
         <select id="Titulo">
             <option value="Sr">Sr</option>
             <option value="Sra">Sra</option>
@@ -24,7 +24,7 @@
         <label for="APaterno">Apellido Paterno:</label>
         <input type="text" id="APaterno" name="APaterno" placeholder="López" required>
 
-        <label for="Genero">Genero:</label>
+        <label for="Genero">Género:</label>
         <select id="Genero">
             <option value="F">Femenino</option>
             <option value="M">Masculino</option>
@@ -37,19 +37,19 @@
             Ingresa tu fecha de nacimiento para calcular tu edad.
         </small>
 
-        <label for="Correo">Correo Electronico:</label>
+        <label for="Correo">Correo Electrónico:</label>
         <input type="email" id="Correo" name="Correo" placeholder="gael@ejemplo.com" required>
     </fieldset>
 
     <fieldset>
-        <legend>Datos de contacto</legend>
-        <label for="emailContacto">Correo de contacto</label>
+        <legend>Datos de Contacto</legend>
+        <label for="emailContacto">Correo de contacto:</label>
         <input type="email" id="emailContacto" name="emailContacto" placeholder="contacto@ejemplo.com">
 
-        <label for="numTel">Número Telefonico</label>
+        <label for="numTel">Número Telefónico:</label>
         <input type="tel" id="numTel" name="numTel" placeholder="(+52)7641033824">
 
-        <label for="horarioInicio">Favor de Contactar en el Horario:</label>
+        <label for="horarioInicio">Favor de contactar en el horario:</label>
         <div class="inline-fields">
             <input type="time" id="horarioInicio" name="horarioInicio" aria-label="Hora inicial">
             <input type="time" id="horarioFin" name="horarioFin" aria-label="Hora final">
@@ -97,25 +97,26 @@
         <label for="usuario">Usuario:</label>
         <input type="text" id="usuario" name="usuario" placeholder="gaellopezga">
 
-        <label for="contrasena">Contrasena:</label>
+        <label for="contrasena">Contraseña:</label>
         <input type="password" id="contrasena" name="contrasena" placeholder="**********" required>
 
-        <label for="confirmarCont">Confirmar Contrasena</label>
+        <label for="confirmarCont">Confirmar Contraseña:</label>
         <input type="password" id="confirmarCont" name="confirmarCont" placeholder="*********" required>
+        <small id="passFeedback" class="field-feedback" aria-live="polite"></small>
     </fieldset>
 
     <fieldset>
-        <legend>Datos de Ubicacion</legend>
-        <label for="direccion">Direccion: </label>
+        <legend>Datos de Ubicación</legend>
+        <label for="direccion">Dirección:</label>
         <input type="text" id="direccion" name="direccion" placeholder="Calle, Número, Colonia, Ciudad, Estado, CP">
-        <label for="pais">País: </label>
+        <label for="pais">País:</label>
         <input type="text" id="pais" name="pais" placeholder="México">
-        <label for="estado">Estado: </label>
+        <label for="estado">Estado:</label>
         <input type="text" id="estado" name="estado" placeholder="Ciudad de México">
-        <label for="ciudad">Ciudad: </label>
+        <label for="ciudad">Ciudad:</label>
         <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad de México">
-        <label for="codigoPostal">Código Postal: </label>
-        <input type="text" id="codigoPostal" name="codigoPostal" placeholder="01234">
+        <label for="codigoPostal">Código Postal:</label>
+        <input type="text" id="codigoPostal" name="codigoPostal" maxlength="5" placeholder="01234">
     </fieldset>
 
     <div class="card-footer">
