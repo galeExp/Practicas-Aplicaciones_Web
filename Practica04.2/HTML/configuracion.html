@@ -1,0 +1,48 @@
+<div class="vista-header">
+    <h2>Configuración</h2>
+    <p>Personaliza tu cuenta y la apariencia de MecaGest</p>
+</div>
+
+<form id="formConfiguracion">
+    <fieldset>
+        <legend>Configuración de Mi cuenta / perfil</legend>
+        
+        <label for="userPhoto">Foto de Perfil:</label>
+        <input type="file" id="userPhoto" name="userPhoto" accept="image/*">
+        <img id="previewUserPhoto" src="" alt="Vista previa de perfil" style="display: none; width: 80px; height: 80px; object-fit: cover; border-radius: 50%; margin-top: 10px; border: 2px solid var(--azul-oscuro);">
+
+        <input type="hidden" id="userId" name="userId" value="25XXXX">
+
+        <div style="margin-top: 14px;">
+            <input type="image" id="buttonNext" src="/Practica04.2/img/flecha.gif" alt="Siguiente" width="50" height="50">
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Configuración de Interfaz</legend>
+
+        <div class="inline-fields">
+            <div style="flex: 1;">
+                <label for="fontColor">Color de la fuente:</label>
+                <input type="color" id="fontColor" name="fontColor" value="#1F2937">
+            </div>
+            <div style="flex: 1;">
+                <label for="backgroundColor">Color de fondo:</label>
+                <input type="color" id="backgroundColor" name="backgroundColor" value="#F8FAFC">
+            </div>
+        </div>
+
+        <label for="soundsVolume">Volumen de reproducción de sonidos: <span id="volumeValue">80%</span></label>
+        <div class="inline-fields" style="align-items: center;">
+            <input type="range" id="soundsVolume" name="soundsVolume" min="0" max="100" value="80">
+            <button type="button" id="muteSounds" class="btn-secundario">Silenciar</button>
+        </div>
+    </fieldset>
+
+    <div class="card-footer">
+        <div class="buttons-row">
+            <input type="submit" id="btnGuardarConfig" value="Guardar Cambios">
+            <input type="reset" id="btnRestaurarConfig" value="Restaurar">
+        </div>
+    </div>
+</form>

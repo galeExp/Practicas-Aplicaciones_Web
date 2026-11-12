@@ -1,0 +1,131 @@
+<div class="vista-header">
+    <h2>Registro de Nuevos Usuarios</h2>
+    <p>Completa los Campos solicitados para tu Registro</p>
+</div>
+
+<!-- Aqui dejaremos el apartado para conectar el wizard -->
+<section></section>
+
+<form id="formRegistro">
+    <fieldset>
+        <legend>Datos Personales</legend>
+        <label for="Titulo">Titulo:</label>
+        <select id="Titulo">
+            <option value="Sr">Sr</option>
+            <option value="Sra">Sra</option>
+            <option value="Srta">Srta</option>
+            <option value="Dr">Dr</option>
+            <option value="Dra">Dra</option>
+        </select>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Gael Uriel" required>
+
+        <label for="APaterno">Apellido Paterno:</label>
+        <input type="text" id="APaterno" name="APaterno" placeholder="López" required>
+
+        <label for="Genero">Genero:</label>
+        <select id="Genero">
+            <option value="F">Femenino</option>
+            <option value="M">Masculino</option>
+            <option value="X">Prefiero no decirlo</option>
+        </select>
+
+        <label for="FNacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="FNacimiento" name="fechaNacimiento" required>
+        <small id="edadResultado" class="field-feedback" aria-live="polite">
+            Ingresa tu fecha de nacimiento para calcular tu edad.
+        </small>
+
+        <label for="Correo">Correo Electronico:</label>
+        <input type="email" id="Correo" name="Correo" placeholder="gael@ejemplo.com" required>
+    </fieldset>
+
+    <fieldset>
+        <legend>Datos de contacto</legend>
+        <label for="emailContacto">Correo de contacto</label>
+        <input type="email" id="emailContacto" name="emailContacto" placeholder="contacto@ejemplo.com">
+
+        <label for="numTel">Número Telefonico</label>
+        <input type="tel" id="numTel" name="numTel" placeholder="(+52)7641033824">
+
+        <label for="horarioInicio">Favor de Contactar en el Horario:</label>
+        <div class="inline-fields">
+            <input type="time" id="horarioInicio" name="horarioInicio" aria-label="Hora inicial">
+            <input type="time" id="horarioFin" name="horarioFin" aria-label="Hora final">
+        </div>
+
+        <h4>Redes Sociales</h4>
+        <hr>
+        <div class="social-fields">
+            <div class="social-row">
+                <label for="urlFacebook">Facebook:</label>
+                <input type="checkbox" id="social-facebook" name="redesActivas" value="facebook" aria-label="Agregar Facebook">
+                <input type="url" id="urlFacebook" name="urlFacebook" placeholder="https://">
+            </div>
+            <div class="social-row">
+                <label for="urlInstagram">Instagram:</label>
+                <input type="checkbox" id="social-instagram" name="redesActivas" value="instagram" aria-label="Agregar Instagram">
+                <input type="url" id="urlInstagram" name="urlInstagram" placeholder="https://">
+            </div>
+            <div class="social-row">
+                <label for="urlLinkedin">LinkedIn:</label>
+                <input type="checkbox" id="social-linkedin" name="redesActivas" value="linkedin" aria-label="Agregar LinkedIn">
+                <input type="url" id="urlLinkedin" name="urlLinkedin" placeholder="https://">
+            </div>
+            <div class="social-row">
+                <label for="urlYoutube">YouTube:</label>
+                <input type="checkbox" id="social-youtube" name="redesActivas" value="youtube" aria-label="Agregar YouTube">
+                <input type="url" id="urlYoutube" name="urlYoutube" placeholder="https://">
+            </div>
+            <div class="social-row">
+                <label for="urlGitHub">GitHub:</label>
+                <input type="checkbox" id="social-github" name="redesActivas" value="github" aria-label="Agregar GitHub">
+                <input type="url" id="urlGitHub" name="urlGitHub" placeholder="https://">
+            </div>
+            <div class="social-row">
+                <label for="imagenWhatsApp">WhatsApp:</label>
+                <input type="checkbox" id="social-whatsapp" name="redesActivas" value="whatsapp" aria-label="Agregar WhatsApp">
+                <input type="file" id="imagenWhatsApp" name="imagenWhatsApp" accept="image/*">
+                <img id="vistaPreviaWhatsApp" src="" alt="Vista previa de WhatsApp" style="display: none; width: 100px; margin-top: 10px;">
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Datos de Acceso</legend>
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" name="usuario" placeholder="gaellopezga">
+
+        <label for="contrasena">Contrasena:</label>
+        <input type="password" id="contrasena" name="contrasena" placeholder="**********" required>
+
+        <label for="confirmarCont">Confirmar Contrasena</label>
+        <input type="password" id="confirmarCont" name="confirmarCont" placeholder="*********" required>
+    </fieldset>
+
+    <fieldset>
+        <legend>Datos de Ubicacion</legend>
+        <label for="direccion">Direccion: </label>
+        <input type="text" id="direccion" name="direccion" placeholder="Calle, Número, Colonia, Ciudad, Estado, CP">
+        <label for="pais">País: </label>
+        <input type="text" id="pais" name="pais" placeholder="México">
+        <label for="estado">Estado: </label>
+        <input type="text" id="estado" name="estado" placeholder="Ciudad de México">
+        <label for="ciudad">Ciudad: </label>
+        <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad de México">
+        <label for="codigoPostal">Código Postal: </label>
+        <input type="text" id="codigoPostal" name="codigoPostal" placeholder="01234">
+    </fieldset>
+
+    <div class="card-footer">
+        <div class="terms-row">
+            <input type="checkbox" id="validado" name="aceptaTerminos" required>
+            <label for="validado" style="margin: 0;">Acepto los términos y condiciones</label>
+        </div>
+        <div class="buttons-row">
+            <input type="submit" id="btnEnviar" value="Enviar" disabled>
+            <input type="reset" id="btnBorrar" value="Borrar">
+        </div>
+    </div>
+</form>

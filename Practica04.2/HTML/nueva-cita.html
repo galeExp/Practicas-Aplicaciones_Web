@@ -1,0 +1,79 @@
+<div class="vista-header">
+    <h2>Agendar Nueva Cita</h2>
+    <p>Registra los datos del vehículo y el servicio requerido</p>
+</div>
+
+<form id="formNuevaCita">
+    <fieldset>
+        <legend>Datos del Cliente y Unidad</legend>
+
+        <div class="inline-fields">
+            <div style="flex: 2;">
+                <label for="clienteCita">Nombre del Cliente:</label>
+                <input type="text" id="clienteCita" name="clienteCita" placeholder="Ej. Mauricio Mejía" required>
+            </div>
+            <div style="flex: 1;">
+                <label for="telCita">Teléfono:</label>
+                <input type="tel" id="telCita" name="telCita" placeholder="(+52) 764..." required>
+            </div>
+        </div>
+
+        <div class="inline-fields">
+            <div style="flex: 2;">
+                <label for="vehiculoCita">Marca y Modelo:</label>
+                <input type="text" id="vehiculoCita" name="vehiculoCita" placeholder="Ej. Volkswagen Jetta" required>
+            </div>
+            <div style="flex: 1;">
+                <label for="anioVehiculo">Año:</label>
+                <input type="number" id="anioVehiculo" name="anioVehiculo" min="1980" max="2027" placeholder="2020" required>
+            </div>
+            <div style="flex: 1;">
+                <label for="placasVehiculo">Placas:</label>
+                <input type="text" id="placasVehiculo" name="placasVehiculo" placeholder="ABC-123-D">
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Detalles de la Cita</legend>
+
+        <div class="inline-fields">
+            <div style="flex: 1;">
+                <label for="tipoServicio">Tipo de Servicio:</label>
+                <select id="tipoServicio" name="tipoServicio" required>
+                    <option value="">Selecciona una opción...</option>
+                    <option value="valoracion">Valoración / Diagnóstico</option>
+                    <option value="preventivo">Mantenimiento Preventivo (Afinación)</option>
+                    <option value="correctivo">Mantenimiento Correctivo</option>
+                    <option value="revision">Revisión por Garantía / Ruido</option>
+                    <option value="entrega">Entrega de Unidad Reparada</option>
+                </select>
+            </div>
+
+            <div style="flex: 1;">
+                <label for="locations">Sucursal:</label>
+                <input list="locationsList" id="locations" name="locations" placeholder="Busca tu sucursal" required>
+                <datalist id="locationsList">
+                    <option value="Xicotepec, Centro">
+                    <option value="Xicotepec, El Tabacal">
+                    <option value="San Isidro, Tierra Negra">
+                    <option value="Necaxa, Canaditas">
+                    <option value="Huauchinango, Petrolera 1">
+                </datalist>
+            </div>
+        </div>
+
+        <label for="dateAppoiment">Fecha y Hora de la Cita:</label>
+        <input type="datetime-local" id="dateAppoiment" name="dateAppoiment" required>
+
+        <label for="descriptionText">Descripción de la falla o servicio:</label>
+        <textarea id="descriptionText" name="descriptionText" rows="3" placeholder="Describe brevemente el problema que reporta el cliente..." required></textarea>
+    </fieldset>
+
+    <div class="card-footer">
+        <div class="buttons-row">
+            <input type="submit" id="btnAgendarCita" value="Agendar Cita">
+            <input type="reset" id="btnLimpiarCita" value="Limpiar">
+        </div>
+    </div>
+</form>

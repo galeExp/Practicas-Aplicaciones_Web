@@ -1,0 +1,77 @@
+<div class="vista-header">
+    <h2>Visualización de Citas</h2>
+    <p>Consulta y filtra las citas programadas del taller</p>
+</div>
+
+<fieldset>
+    <legend>Filtro de Búsqueda</legend>
+    
+    <div class="filter-bar">
+        <div class="radio-group">
+            <span>Filtrar por:</span>
+            <label><input type="radio" name="appimentFilter" value="Month" id="appoimentByMonth" checked> Mes</label>
+            <label><input type="radio" name="appimentFilter" value="Week" id="appoimentByWeek"> Semana</label>
+        </div>
+
+        <div class="inline-fields">
+            <input type="month" id="inputMes" aria-label="Seleccionar mes">
+            <input type="week" id="inputSemana" aria-label="Seleccionar semana" disabled>
+            <button type="button" id="verCita" class="btn-primario">Mostrar</button>
+        </div>
+    </div>
+</fieldset>
+
+<fieldset>
+    <legend id="tituloTablaCitas">Citas Programadas en el mes</legend>
+    
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Cliente y Unidad</th>
+                    <th>Descripción del Servicio</th>
+                    <th>Fecha</th>
+                    <th>Estatus</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><strong>Mauricio Mejía</strong><br><small>Volkswagen Jetta 2020</small></td>
+                    <td>Cita de entrega de unidad reparada. Se realizó un cambio de bujías, la unidad está lista para entrega.</td>
+                    <td>10/Oct/2026</td>
+                    <td><span class="badge badge-atendida">Atendida</span></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><strong>Marco A. Ramírez</strong><br><small>Renault Duster 2014</small></td>
+                    <td>Cita de valoración. Solicita revisión del cuerpo de aceleración para posible mantenimiento correctivo.</td>
+                    <td>16/Oct/2026</td>
+                    <td><span class="badge badge-programada">Programada</span></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><strong>Mauricio Mejía</strong><br><small>Volkswagen Jetta 2020</small></td>
+                    <td>Cita de revisión. Se le hizo cambio de bujías, pero el cliente reporta un sonido extraño.</td>
+                    <td>17/Oct/2026</td>
+                    <td><span class="badge badge-programada">Programada</span></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><strong>Alejandra Romero</strong><br><small>Toyota Hilux 2012</small></td>
+                    <td>Cita de valoración. Solicita revisión del cuerpo de aceleración para posible mantenimiento correctivo.</td>
+                    <td>16/Oct/2026</td>
+                    <td><span class="badge badge-cancelada">Cancelada</span></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td><strong>Alejandra Romero</strong><br><small>Toyota Hilux 2012</small></td>
+                    <td>Cita de valoración. Solicita revisión del cuerpo de aceleración para posible mantenimiento correctivo.</td>
+                    <td>20/Oct/2026</td>
+                    <td><span class="badge badge-reprogramada">Reprogramada</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</fieldset>
