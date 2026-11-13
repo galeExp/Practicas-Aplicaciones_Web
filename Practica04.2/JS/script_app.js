@@ -6,7 +6,7 @@ const contenedor = document.getElementById("contenedor-vistas");
 async function cargarVista(nombreVista) {
     if (!contenedor) return;
     try {
-        const res = await fetch(`/Practica04.2/HTML/${nombreVista}.html`);
+        const res = await fetch(`HTML/${nombreVista}.html`);
         if (!res.ok) throw new Error(`No se encontró ${nombreVista}.html`);
 
         contenedor.innerHTML = await res.text();
